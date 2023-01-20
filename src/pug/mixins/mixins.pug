@@ -1,0 +1,67 @@
+mixin blog(title, textInfo,img,textDescr,button)
+	.blog
+		h2.blog__title #{title}
+		.blog__text-info 
+			p #{textInfo}
+		.blog__img
+			img(src=img)
+		.blog__text-descr
+			p #{textDescr}
+		.blog__column 
+			a(href="#").button.button--blog #{button} 
+			+social(
+				"./../img/icons/social/whatsapp.svg",
+				"./../img/icons/social/instagram.svg",
+				"./../img/icons/social/twitter.svg",
+				"./../img/icons/social/facebook-f.svg"
+				)
+
+mixin social(whatsapp,instagram,twitter,facebook) 
+	ul.social
+		li.social__item 
+			a.social__link
+				img(src=whatsapp)
+		li.social__item 
+			a.social__link
+				img(src=instagram)
+		li.social__item 
+			a.social__link
+				img(src=twitter)
+		li.social__item 
+			a.social__link
+				img(src=facebook)
+
+mixin posts(img,title,textInfo)
+	.posts 
+		.posts__img 
+			img(src=img)
+		h3.posts__title #{title}
+		.posts__text 
+			p #{textInfo}
+
+mixin instagram(img1,img2,img3,img4,img5,img6,img7,img8)
+	ul.instagram
+		li.instagram__item 
+			a.instagram__link(href="!#")
+			img(src=img1)
+		li.instagram__item 
+			a.instagram__link(href="!#")
+			img(src=img2)
+		li.instagram__item 
+			a.instagram__link(href="!#")
+				img(src=img3)
+		li.instagram__item 
+			a.instagram__link(href="!#")
+				img(src=img4)
+		li.instagram__item 
+			a.instagram__link(href="!#")
+				img(src=img5)
+		li.instagram__item 
+			a.instagram__link(href="!#")
+				img(src=img6)
+		li.instagram__item 
+			a.instagram__link(href="!#")
+				img(src=img7)
+		li.instagram__item
+			a.instagram__link(href="!#")
+				img(src=img8)
