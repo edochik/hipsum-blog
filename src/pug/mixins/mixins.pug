@@ -9,27 +9,14 @@ mixin blog(title, textInfo,img,textDescr,button)
 			p #{textDescr}
 		.blog__column 
 			a(href="#").button.button--blog #{button} 
-			+social(
-				"./../img/icons/social/whatsapp.svg",
-				"./../img/icons/social/instagram.svg",
-				"./../img/icons/social/twitter.svg",
-				"./../img/icons/social/facebook-f.svg"
-				)
+			+social('whatsapp','instagram','twitter','facebook-f')
 
-mixin social(whatsapp,instagram,twitter,facebook) 
+mixin social(...arg) 
 	ul.social
-		li.social__item 
-			a.social__link
-				img(src=whatsapp)
-		li.social__item 
-			a.social__link
-				img(src=instagram)
-		li.social__item 
-			a.social__link
-				img(src=twitter)
-		li.social__item 
-			a.social__link
-				img(src=facebook)
+		each item in arg
+			li.social__item 
+				a.social__link
+					img(src="./../img/icons/social/" + item + ".svg")
 
 mixin posts(img,title,textInfo)
 	.posts 
@@ -39,29 +26,9 @@ mixin posts(img,title,textInfo)
 		.posts__text 
 			p #{textInfo}
 
-mixin instagram(img1,img2,img3,img4,img5,img6,img7,img8)
-	ul.instagram
-		li.instagram__item 
-			a.instagram__link(href="!#")
-			img(src=img1)
-		li.instagram__item 
-			a.instagram__link(href="!#")
-			img(src=img2)
-		li.instagram__item 
-			a.instagram__link(href="!#")
-				img(src=img3)
-		li.instagram__item 
-			a.instagram__link(href="!#")
-				img(src=img4)
-		li.instagram__item 
-			a.instagram__link(href="!#")
-				img(src=img5)
-		li.instagram__item 
-			a.instagram__link(href="!#")
-				img(src=img6)
-		li.instagram__item 
-			a.instagram__link(href="!#")
-				img(src=img7)
-		li.instagram__item
-			a.instagram__link(href="!#")
-				img(src=img8)
+mixin instagram(...arg)
+	ul.instagram__list
+		each item in arg 
+			li.instagram__item 
+				a.instagram__link(href="!#")
+					img(src="./../img/instagram/insta-" + item + ".jpg")

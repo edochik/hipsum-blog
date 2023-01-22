@@ -1,10 +1,12 @@
+include ../mixins/mixins.pug
+
 .sidebar
 	.posts-recent
-		a.button.button--posts(href="#!") Recent posts
+		a.widget(href="#!") Recent posts
 		include ../blocks/posts-recent.pug
 	.posts-popular
-		a.button.button--posts(href="#!") Popular posts
+		a.widget(href="#!") Popular posts
 		include ../blocks/posts-popular.pug
 	.instagram
-		a.button.button--posts(href="#!") Instagram
-		include ../blocks/instagram.pug
+		a.widget(href="#!") Instagram
+		+instagram("01","02","03","04","05","06","07","08")
